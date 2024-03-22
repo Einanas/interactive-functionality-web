@@ -8,9 +8,11 @@ body{
 }
 
 section {
-    background-color: blueviolet;
     height: 400px;
     width: 300px;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 article {
@@ -27,13 +29,13 @@ article {
 
 input{
     display: none;
-    & svg{
-        display:block;
-        height:150px;
-    }
+}
+svg{
+    height: 35px;
+    width: 35px;
 }
 
-/* <label>
-  <input type="checkbox" name="boek" id="opslaan">
-  <i class="fa-solid fa-plus"></i>
-</label>  */
+svg:hover{
+    height: 32px;
+    width:32px;
+}

@@ -19,23 +19,22 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: true }))
 
 // Stel het oba profile in
-const apiData = 'https://fdnd-agency.directus.app/oba_profile'
+const apiData = 'https://fdnd-agency.directus.app/items/oba_profile'
 
 // Stel het oba profile in
-const apiFamily = 'https://fdnd-agency.directus.app/oba_family'
+const apiFamily = 'https://fdnd-agency.directus.app/items/oba_family'
 
 // Stel het basis endpoint in
-const apiUrl = 'https://fdnd-agency.directus.app/items/'
+const apiUrl = 'https://fdnd-agency.directus.app/items/oba_item'
 
 const apiItem = (apiUrl + 'oba_item')
 
 app.get('/', function(request, response) {
-    fetchJson(apiItem).then((items) => { console.log(items.data)
+    fetchJson('https://fdnd-agency.directus.app/items/oba_item').then((items) => {
         response.render('index', {           
             items: items.data /*hier zeg ik dat iedereen getoond moet worden*/
         });
     })
-    console.log(apiItem) 
 })
 
 // GET schrijven voor Boeken
