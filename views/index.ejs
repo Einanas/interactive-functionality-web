@@ -1,0 +1,45 @@
+<%- include('./partials/head') %>
+
+<!-- Profiel -->
+<link rel="stylesheet" href="style.css">
+<h1>Boeken</h1>
+<!-- <ul>
+    <% items.forEach(item => { %>
+        <li>
+          <items class="name of person">
+            <h1><%= item.title %></h1>
+            <img src="<%= item.afbeelding %>" alt="leesboek">
+          </items>
+          <div>
+            <input type="checkbox" name="boek" id="opslaan">
+            <label for="opslaan">Opslaan</label>
+          </div>
+        </li>
+    <% }) %>
+</ul> -->
+
+<section>
+  <% items.forEach(item => { %>
+        <article class="top">
+            <img src="<%= item.afbeelding %>" alt="leesboek">
+        </article>
+        <div class="bottom">
+          <p><%= item.title %></p> 
+          <!-- <input type="checkbox" name="boek" id="opslaan"> -->
+          <!-- <label for="opslaan">Opslaan</label> -->
+          <label>
+            <input type="checkbox" name="boek" id="opslaan">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                 <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 
+                 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 
+                 32-32s-14.3-32-32-32H256V80z"/></svg>
+          </label>
+        </div>
+  <% }) %>
+</section>
+
+<!--      https://www.youtube.com/watch?v=sf_ac-dYh3w      
+          https://www.youtube.com/watch?v=D7B8BQ5TFTE
+ -->
+
+<%- include('./partials/foot') %>

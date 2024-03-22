@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+}
+
+section {
+    background-color: blueviolet;
+    height: 400px;
+    width: 300px;
+}
+
+article {
+    height: 300px;
+    width: 300px;
+    background-color: brown;
+}
+
+.bottom {
+    height: 100px;
+    width: 300px;
+    background-color: burlywood;
+}
+
+input{
+    display: none;
+    & svg{
+        display:block;
+        height:150px;
+    }
+}
+
+/* <label>
+  <input type="checkbox" name="boek" id="opslaan">
+  <i class="fa-solid fa-plus"></i>
+</label>  */
