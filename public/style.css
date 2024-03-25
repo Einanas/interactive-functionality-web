@@ -15,10 +15,15 @@ section {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-article {
+top {
     height: 300px;
     width: 300px;
     background-color: brown;
+}
+
+img {
+    height: 300px;
+    width: 300px;
 }
 
 .bottom {
