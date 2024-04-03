@@ -29,8 +29,12 @@ const apiUrl = 'https://fdnd-agency.directus.app/items/oba_item'
 
 const apiItem = (apiUrl + 'oba_item')
 
+// Array of object (ik weet niet specifiek welke) for POST om boeken op te slaan
+let savedItems = [2, 3, 4, 5, 6, 20, 26, 31, 32];
+
 // Home pagina
 app.get('/', function(request, response) {
+    console.log(savedItems)
     fetchJson('https://fdnd-agency.directus.app/items/oba_item').then((items) => {
         response.render('index', {           
             items: items.data, /*hier zeg ik dat iedereen getoond moet worden*/
@@ -57,24 +61,14 @@ app.get('/boeken/:id', function(request, response) {
     });
 })
 
-// Array of object (ik weet niet specifiek welke) for POST om boeken op te slaan
-let savedItems = [{name: "Lord of the rings And the fellowship of the ring", type: "book", id: "2"},
-                  {name: "Lord of the rings The two towers", type: "book", id: "3"}, 
-                  {name: "Het leven van een loser ", type: "book", id: "4"},
-                  {name: "Percy Jackson en de Griekse goden", type: "book", id: "5"},
-                  {name: "Vind je ikigai", type: "book", id: "6"},
-                  {name: "Rich dad poor dad", type: "book", id: "7"},
-                  {name: "Fantasia  / Geronimo Stilton", type: "book", id: "8"},
-                  {name: "Maneki neko :Het Japanse geheim voor voorspoed en geluk", type: "book", id: "10"},
-                  {name: "No Plan B", type: "book", id: "12"},
-                  {name: "Murder on the Orient Express", type: "book", id: "20"},
-                  {name: "The Da Vinci Code", type: "book", id: "26"},
-                  {name: "It ends with us", type: "book", id: "31"},
-                  {name: "Too Late", type: "book", id: "32"},
-];
-
-// Ik weet toch niet zeker hoe ik verder moet 
-
+// Maak een POST route voor de index
+app.post('/boeken/:id', function(request, response) {
+    // Voeg het nieuwe bericht toe aan de messages array
+    savedItems.push(Number(request.params.id))
+  
+    // Redirect hierna naar de homepage
+    response.redirect(303, '/')
+  })
   
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)

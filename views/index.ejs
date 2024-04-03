@@ -1,8 +1,5 @@
 <!--                      HOME PAGINA                       -->
 <%- include('./partials/head') %>
-
-
-<!-- <link rel="stylesheet" href="style.css"> -->
 <h1>HOME</h1>
 
 <section>
@@ -20,9 +17,11 @@
             <%= item.title %>
           </a>
         </h2>
+
+        <% if (!savedItems.includes(item.id)) { %>
         <!-- Form voor opslaan knopje met svg -->
         <form method="post" action="/boeken/<%=item.id%>">
-          <button name="savedItems">
+          <button>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 
                        32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 
@@ -30,15 +29,23 @@
             </svg>
           </button>
         </form>
+        <% } else { %>
+        <svg class="svg-icon" style="vertical-align: middle;fill: currentColor;overflow: hidden;" 
+        viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M420.693333 768a42.666667 42.666667 
+        0 0 1-31.146666-13.653333l-207.36-220.586667a42.666667 42.666667 0 1 1 62.293333-58.453333l175.786667 187.306666 
+        358.826666-392.533333a42.666667 42.666667 0 1 1 63.146667 57.173333l-389.973333 426.666667a42.666667 42.666667 0 0 
+        1-31.146667 14.08z" fill="#231F20" />
+        </svg>
+        <% } %>
 
       </div>
     </article>
     <% }) %>
 </section>
 
-input:checked + svg
+<!-- input:checked + svg
 
-assets link bij item.afbeelding laten gebruiken
+assets link bij item.afbeelding laten gebruiken -->
 
 
 
