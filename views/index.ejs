@@ -12,21 +12,26 @@
       </div>
       <div class="bottom">
         <h2>
+          <%= item.title %>
+
           <!-- title van elke boek -->
-          <a href="/boeken/<%=item.id%>">
+          <!-- <a href="/boeken/<%=item.id%>">
             <%= item.title %>
-          </a>
+          </a> -->
         </h2>
 
         <% if (!savedItems.includes(item.id)) { %>
         <!-- Form voor opslaan knopje met svg -->
         <form method="post" action="/boeken/<%=item.id%>">
           <button>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 
-                       32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 
-                       32-32s-14.3-32-32-32H256V80z" />
-            </svg>
+            <svg class="plus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+
+              <defs>
+              </defs>
+              <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2)">
+                <path d="M86.5 41.5h-38v-38c0-1.933-1.567-3.5-3.5-3.5s-3.5 1.567-3.5 3.5v38h-38c-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5h38v38c0 1.933 1.567 3.5 3.5 3.5s3.5-1.567 3.5-3.5v-38h38c1.933 0 3.5-1.567 3.5-3.5s-1.567-3.5-3.5-3.5z" fill="rgb(29,29,27)" />
+            </g>
+              </svg>
           </button>
         </form>
         <% } else { %>
